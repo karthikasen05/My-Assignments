@@ -20,6 +20,8 @@ test ("Test to launch a browser manually to select Dropdown",async({page})=>{
     await page.selectOption(`//select[@id='createLeadForm_generalCountryGeoId']`, {value : "IND"});
      
     await page.locator(`//input[@class='smallSubmit']`).click();
+    await page.waitForTimeout(10000);
+    
     const pg = await page.title();
     console.log(  `Page title :`,pg );
     
